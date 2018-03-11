@@ -7,7 +7,7 @@ This module demonstrates and practices:
   -- UNIT TESTING.
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
+         their colleagues and Xuechen Bai.
 """  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 import m3t_tester
@@ -135,6 +135,18 @@ def run_test_digits_in_cube():
     print('Testing the   digits_in_cube   function:')
     print('-----------------------------------------------------')
 
+    a=digits_in_cube(3)
+    print('actual',a)
+    print('expect',9)
+    b=digits_in_cube(4)
+    print('actual',b)
+    print('expect',10)
+    c=digits_in_cube(6)
+    print('actual',c)
+    print('expect',9)
+
+
+
 
 def digits_in_cube(n):
     """
@@ -155,7 +167,7 @@ def digits_in_cube(n):
     #    the    sum_of_digits    function that is DEFINED ABOVE.
     ####################################################################
     # ------------------------------------------------------------------
-
+    return sum_of_digits(n**3)
 
 def run_test_digits_in_power():
     """ Tests the   digits_in_power   function. """
@@ -170,6 +182,15 @@ def run_test_digits_in_power():
     print('--------------------------------------------------')
     print('Testing the   digits_in_power   function:')
     print('--------------------------------------------------')
+    a=digits_in_power(3,5)
+    b=digits_in_power(7,8)
+    c=digits_in_power(5,9)
+    print('actual',a)
+    print('expect',6)
+    print('actual',b)
+    print('expect',6)
+    print('actual',c)
+    print('expect',3)
 
 
 def digits_in_power(n, k):
@@ -191,7 +212,7 @@ def digits_in_power(n, k):
     #    the    sum_of_digits    function that is DEFINED ABOVE.
     ####################################################################
     # ------------------------------------------------------------------
-
+    return sum_of_digits(n^k)
 
 def run_test_fancy_sums_of_digits():
     """ Tests the   fancy_sums_of_digits   function. """
@@ -207,6 +228,9 @@ def run_test_fancy_sums_of_digits():
     print('--------------------------------------------------')
     print('Testing the   fancy_sums_of_digits   function:')
     print('--------------------------------------------------')
+    print(fancy_sums_of_digits(2))
+    print(fancy_sums_of_digits(100))
+    print(fancy_sums_of_digits(3))
 
     # ------------------------------------------------------------------
     # HINT:  For your 1st test, consider  n=10.  Figure out BY HAND
@@ -249,7 +273,9 @@ def fancy_sums_of_digits(n):
     #    the    sum_of_digits    function that is DEFINED ABOVE.
     ####################################################################
     # ------------------------------------------------------------------
-
+    a=sum_of_digits(n**1000)
+    b=sum_of_digits(n**999)
+    return sum_of_digits(a**b)
 # ----------------------------------------------------------------------
 # Calls  main  to start the ball rolling.
 # This unusual form is necessary for the special testing we provided.

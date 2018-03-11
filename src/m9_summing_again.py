@@ -4,13 +4,13 @@ in its simplest classic forms:
    SUMMING:       total = total + number
 
 Authors: David Mutchler, Valerie Galluzzi, Mark Hays, Amanda Stouder,
-         their colleagues and PUT_YOUR_NAME_HERE.
+         their colleagues and Xuechen Bai.
 """  # TODO: 1. PUT YOUR NAME IN THE ABOVE LINE.
 
 
 def main():
     """ Calls the   TEST   functions in this module. """
-    run_test_sum_powers()
+    #run_test_sum_powers()
     run_test_sum_powers_in_range()
 
 
@@ -28,10 +28,28 @@ def run_test_sum_powers():
     print('--------------------------------------------------')
     print('Testing the   sum_powers   function:')
     print('--------------------------------------------------')
+    a = sum_powers(5, -0.3)
+    print('actual', a)
+    print('expect', 3.80826)
+    b = sum_powers(100, 0.1)
+    print('actual', b)
+    print('expect', 144.45)
+    c = sum_powers(3, 2)
+    print('actual', c)
+    print('expect', 14)
+
 
 
 def sum_powers(n, p):
-    """
+    a = 0
+    if(p>=0):
+        for k in range(n + 1):
+            a = a + k ** p
+    if(p<0):
+        for k in range(1,n+1):
+            a = a + 1/(k**(-p))
+    return a
+"""
     What comes in:  A non-negative integer n
                     and a number p.
     What goes out:  The sum   1**p + 2**p + 3**p + ... + n**p
@@ -65,9 +83,27 @@ def run_test_sum_powers_in_range():
     print('--------------------------------------------------')
     print('Testing the   sum_powers_in_range   function:')
     print('--------------------------------------------------')
+    a = sum_powers_in_range(3, 100, 0.1)
+    print('actual', a)
+    print('expect', 142.384)
+    b = sum_powers_in_range(100, 101,2)
+    print('actual', b)
+    print('expect', 20201)
+    c = sum_powers_in_range(3, 7,0.5)
+    print('actual', c)
+    print('expect', 11.063359838916433)
 
 
 def sum_powers_in_range(m, n, p):
+    a = 0
+    if (p >= 0):
+        for k in range(n - m+1):
+            a =a+ (m+k) ** p
+    if (p < 0):
+        for k in range(1, n + 1):
+            a = a + 1 / ((m+k) ** (-p))
+    return a
+
     """
     What comes in:  Non-negative integers m and n, with n >= m,
                     and a number p.
